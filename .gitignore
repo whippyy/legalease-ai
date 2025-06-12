@@ -52,3 +52,45 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# .gitignore for .NET Core, Blazor, Docker
+
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Mac OS files
+.DS_Store
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# npm packages (if any in frontend)
+node_modules/
+
+# Docker files
+**/Dockerfile*
+
+# Ignore data folder (for large datasets)
+data/
+
+# Publish output
+publish/
+
+# Azure Pipelines or other CI
+*.azure-pipelines.yml
+
+# Others
+*.vs/

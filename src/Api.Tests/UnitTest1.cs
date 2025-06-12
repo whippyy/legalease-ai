@@ -1,10 +1,12 @@
-﻿namespace Api.Tests;
+﻿using Xunit;
 
-public class UnitTest1
+namespace Api.Tests;
+
+public class SampleTests
 {
     [Fact]
-    public void Test1()
+    public void True_Is_True()
     {
-
+        Assert.True(true);
     }
 }

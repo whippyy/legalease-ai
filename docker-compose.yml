@@ -1,10 +1,12 @@
+version: "3.8"
+
 services:
   api:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5001:5000"  # Host 5001 → Container 5000
+      - "5001:5000"  # Make sure this port is free
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:
@@ -15,10 +17,14 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:80"  # Host 3000 → Container 80
+      - "3000:80"  # Change this to another free port
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - api
     networks:
       - legalease-net
+
+networks:
+  legalease-net:
+    driver: bridge

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5001:5000"  # Make sure this port is free
+      - "5001:8080"  # Make sure this port is free
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:

@@ -10,7 +10,7 @@ services:
 
   frontend:
     build:
-      context: .
+      context: ./src/Frontend
       dockerfile: Dockerfile.frontend  # Uses the separate Dockerfile for Frontend
     ports:
       - "3000:80"             # Blazor Server apps use port 80 internally

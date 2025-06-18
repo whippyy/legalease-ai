@@ -4,24 +4,18 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile  # Uses the root Dockerfile for API
     ports:
-      - "5001:8080"  # Make sure this port is free
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - "5001:8080"            # API listens on 8080 inside the container
     networks:
       - legalease-net
 
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.frontend  # Uses the separate Dockerfile for Frontend
     ports:
-      - "3000:80"  # Change this to another free port
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    depends_on:
-      - api
+      - "3000:80"             # Blazor Server apps use port 80 internally
     networks:
       - legalease-net
 
